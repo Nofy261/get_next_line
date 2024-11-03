@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:58:18 by nolecler          #+#    #+#             */
-/*   Updated: 2024/11/03 12:12:34 by nolecler         ###   ########.fr       */
+/*   Updated: 2024/11/03 12:15:29 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char *read_line(char *stash, int fd)
 {
@@ -78,13 +78,13 @@ static char *clean_line(char *stash)
 char *get_next_line(int fd)
 {
     char *line;
-    static char *str = NULL; // Variable statique pour conserver les données entre les appels
+    static char *str[1024]; // Variable statique pour conserver les données entre les appels
 
-    if (fd < 0 || BUFFER_SIZE <= 0)
+    if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
         return (NULL); // Vérification de la validité du descripteur de fichier et de la taille du buffer
-    str = read_line(str, fd);
-    line = extract_line(str);
-    str = clean_line(str);
+    str[fd] = read_line(str[fd], fd);
+    line = extract_line(str[fd]);
+    str[fd] = clean_line(str[fd]);
     return (line);
 }
 
