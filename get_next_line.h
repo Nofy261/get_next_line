@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:59:43 by nolecler          #+#    #+#             */
-/*   Updated: 2024/11/03 12:05:30 by nolecler         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:45:25 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@
 #  define BUFFER_SIZE 42
 # endif
 
-char *get_next_line(int fd);
+char	*get_next_line(int fd);
 char	*ft_strdup(char *s);
-int	ft_strlen(char *str);
+int		ft_strlen(char *str);
 char	*ft_substr(char *s, int start, int len);
-char	*ft_strjoin(char *stash, char *buffer);
-int ft_strchr(char *s, int c);
+char	*ft_strjoinfree(char *stash, char *buffer);
+int		ft_strchr(char *s, int c);
 
-
-
-#endif 
+#endif
