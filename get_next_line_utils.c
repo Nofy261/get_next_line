@@ -6,7 +6,7 @@
 /*   By: nolecler <nolecler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 11:58:09 by nolecler          #+#    #+#             */
-/*   Updated: 2024/11/06 12:58:28 by nolecler         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:15:35 by nolecler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,10 @@ int	ft_strchr(char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
-			return (i);
+			return (1);
 		i++;
 	}
 	if (s[i] == (char)c)
-		return (i);
+		return (1);
 	return (0);
 }
